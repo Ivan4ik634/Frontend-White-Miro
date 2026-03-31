@@ -1,0 +1,95 @@
+{
+  "title_boards": "Дошки",
+  "description_boards": "Керуйте завданнями, відстежуйте прогрес та працюйте в команді.",
+  "add_board": "Додати дошку",
+  "filters": "Фільтри",
+  "avtor": "Автор",
+  "not_preview": "Немає прев'ю",
+  "members": "Учасники",
+  "filters_all": "Всі",
+  "filters_shared": "Поділених",
+  "filters_liked": "Лайкнуті",
+  "search": "Пошук...",
+  "sort": "Сортування",
+  "sort_name": "Назва",
+  "sort_date": "Дата",
+  "home": "Домашня",
+  "tasks": "Завдання",
+  "boards": "Дошки",
+  "logout": "Вийти з аккаунту",
+  "settings": "Налаштування",
+  "total_boards": "Всього дошок",
+  "total_tasks": "Всього завдань",
+  "avg_members": "Середнє кількість учасників",
+  "done_boards": "Завершені дошки",
+  "private_boards": "Приватні дошки",
+  "team_boards": "Командні дошки",
+  "title_last_boards": "Останні дошки",
+  "description_last_boards": "Останні дошки, які ви переглядали",
+
+  "title": "Назва",
+  "status": "Статус",
+  "access": "Доступ",
+  "board": "Дошка",
+  "text": "Текст",
+
+  "created_at": "Створено",
+  "title_last_tasks": "Останні завдання",
+  "description_last_tasks": "Останні завдання, які ви робили",
+
+  "title_edit_profile": "Редагування профілю",
+  "description_edit_profile": "Змініть ваш профіль, включаючи зображення, ім'я, прізвище, email та пароль.",
+  "add_image": "Додати зображення",
+  "delete_image": "Видалити зображення",
+  "save": "Зберегти",
+
+  "notifications": "Сповіщення",
+  "description_notification": "Категорія сповіщень користувача",
+  "notification_tasks": "Завдання",
+  "notification_entering_board": "Дошки",
+  "notification_messages": "Повідомлення",
+
+  "themes": "Теми",
+  "theme_light": "Світла",
+  "theme_dark": "Темна",
+
+  "global_settings": "Глобальні налаштування",
+  "change_language": "Змінити мову",
+  "leave_account": "Вийти з аккаунту",
+
+  "description_tasks": "Виконуєте, редагуєте та вирішуєте нові завдання без будь-яких проблем.",
+
+  "remove_to_favorite": "Видалити з улюблених",
+  "add_to_favorite": "Додати до улюблених",
+
+  "delete_board": "Видалити дошку",
+  "edit_board": "Редагувати дошку",
+  "add_task": "Додати завдання",
+
+  "scale": "Масштаб",
+  "elements": "Елементи",
+
+  "task": "завдання",
+  "copy_text": " Копіювати текст",
+  "delete_task": "Видалити завдання",
+  "edit_task": "Редагувати завдання",
+  "info_task": "Інформація про завдання",
+
+  "share_board": "Поділитися дошкою",
+  "copy_link": "Копіювати посилання",
+  "who_has_access": "Кому дозволено переглядати",
+
+  "public_access": "Публічний доступ",
+  "locked_access": "Закритий доступ",
+  "description_public_access": "Усі користувачі Інтернету, які мають ці посилання, можуть переглядати",
+  "description_locked_access": "Тільки користувачі з доступом можуть перейти за цим посиланням",
+
+  "submit": "Надіслати",
+
+  "add": "Додати",
+  "edit": "Редагувати",
+  "id": "Айди",
+
+  "no_boards": "Немає дошок",
+  "no_tasks": "Немає завдань"
+}

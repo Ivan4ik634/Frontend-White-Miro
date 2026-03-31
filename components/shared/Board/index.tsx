@@ -1,0 +1,156 @@
+'use client';
+import { ContextMenu, ContextMenuTrigger } from '@/components/ui';
+import { useBoard } from '@/hooks/useBoard';
+import { useConnectSocket } from '@/hooks/useConnectSocket';
+import { useSocket } from '@/hooks/useSocket';
+import '@/i18n';
+import { TaskT } from '@/types/Task';
+import { Loader } from 'lucide-react';
+import { useParams } from 'next/navigation';
+import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Edges } from '../Edges';
+import { Task } from '../Task';
+import { ChatPopover } from './ChatPopover';
+import { ContextMenuBoard } from './ContextMenuBoard';
+import { Header } from './Header';
+import UserCursors from './UsersCursor';
+export default function Board() {
+  const param: { id: string } = useParams();
+  const socket = useSocket();
+  const { t } = useTranslation();
+  const {
+    handleMouseMove,
+    handleMouseUp,
+    handleWheel,
+    handleBoardMouseDown,
+    handleMouseUpOnTask,
+    handleNodeMouseDown,
+    setConnectingFrom,
+    onEndConnect,
+    tool,
+    board,
+    selectionTasks,
+    selectionArea,
+    error,
+    mousePos,
+    isLoading,
+    connectingFrom,
+    isSelection,
+    isPanning,
+    position,
+    nodes,
+    draggingNode,
+    scale,
+  } = useBoard({ socket: socket! });
+  const ref = useRef<HTMLDivElement | null>(null);
+
+  useConnectSocket({ socket, roomId: param.id, position });
+
+  if (isLoading)
+    return (
+      <div className="absolute top-[50%] left-[50%] translate-[-50%]">
+        <Loader className="animate-spin" size={40} />
+      </div>
+    );
+
+  if (error)
+    return (
+      <div className="flex items-center gap-x-4 absolute top-[50%] left-[50%] translate-[-50%]">
+        <h1 className="font-semibold text-2xl">404</h1>
+        <p className="text-xl">Board not found</p>
+      </div>
+    );
+
+  return (
+    <div className="max-[900px]:my-[50px] touch-none">
+      <Header board={board} />
+      <ContextMenu>
+        <ContextMenuTrigger>
+          <div
+            ref={ref}
+            onPointerMove={handleMouseMove}
+            onPointerUp={handleMouseUp}
+            onWheel={handleWheel}
+            className="w-full h-screen touch-none max-[900px]:h-[calc(100vh-100px)] overflow-hidden relative"
+            style={{
+              backgroundImage: `
+      radial-gradient(circle at ${1 * scale}px ${1 * scale}px, rgba(128,128,128,0.25) ${
+                1 * scale
+              }px, transparent 0)
+    `,
+              backgroundPosition: `${position.x}px ${position.y}px`,
+
+              backgroundSize: '24px 24px',
+              cursor: tool === 'grab' ? (isPanning ? 'grabbing' : 'grab') : 'default',
+              backgroundColor: 'var(--background)',
+              color: 'var(--foreground)',
+            }}
+          >
+            <UserCursors position={position} />
+
+            <div onPointerDown={handleBoardMouseDown} className="w-full h-full">
+              <Edges
+                scale={scale}
+                position={position}
+                connectingFrom={connectingFrom!}
+                mousePos={mousePos}
+                nodes={nodes}
+              />
+              <div
+                style={{
+                  transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
+                  transformOrigin: '0 0',
+                  transition: draggingNode || isPanning ? 'none' : 'transform 0.1s',
+                  position: 'relative',
+                  width: 'max-content',
+                  height: 'max-content',
+                }}
+              >
+                {isSelection && (
+                  <div
+                    style={{
+                      left: `${selectionArea?.x}px`,
+                      top: `${selectionArea?.y}px`,
+                      height: `${selectionArea?.h}px`,
+                      width: `${selectionArea?.w}px`,
+                    }}
+                    className="absolute bg-blue-500/30 z-10 border border-blue-500 rounded-[3px]"
+                  />
+                )}
+                {nodes.tasks.map((node: TaskT) => (
+                  <Task
+                    className={`${
+                      selectionTasks.some((task) => task._id === node._id)
+                        ? 'border border-blue-500/50'
+                        : ''
+                    }`}
+                    socket={socket!}
+                    node={node}
+                    onEndConnect={onEndConnect}
+                    onStartConnect={(id) => setConnectingFrom(id)}
+                    onPointerUp={() => handleMouseUpOnTask(node._id)}
+                    onPointerDown={(e) => handleNodeMouseDown(e, node._id)}
+                    key={node._id}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="absolute block max-[900px]:hidden bottom-4 left-4 bg-white dark:bg-zinc-900  px-3 py-2 rounded-xl shadow text-sm">
+              <p>
+                {t('scale')}: {(scale * 100).toFixed(0)}%
+              </p>
+              <p>
+                {t('elements')}: {nodes.tasks.length}
+              </p>
+            </div>
+            <ChatPopover socket={socket!} roomId={param.id} />
+          </div>
+        </ContextMenuTrigger>
+        {board && (
+          <ContextMenuBoard board={board} socket={socket!} scale={scale} position={position} />
+        )}
+      </ContextMenu>
+    </div>
+  );
+}

@@ -1,0 +1,7 @@
+[Nest] 6508  - 13.10.2025, 19:19:19     LOG [WebSocketsController] TaskGateway subscribed to the "joinRoom" message +45ms
+[Nest] 6508  - 13.10.2025, 19:19:19     LOG [WebSocketsController] TaskGateway subscribed to the "task:create" message +0ms
+[Nest] 6508  - 13.10.2025, 19:19:19     LOG [WebSocketsController] TaskGateway subscribed to the "task:update" message +1ms
+[Nest] 6508  - 13.10.2025, 19:19:19     LOG [WebSocketsController] TaskGateway subscribed to the "task:delete" message +0ms
+[Nest] 6508  - 13.10.2025, 19:19:19     LOG [WebSocketsController] TaskGateway subscribed to the "userOnline" message +0ms
+[Nest] 6508  - 13.10.2025, 19:19:19     LOG [WebSocketsController] TaskGateway subscribed to the "moveUser" message +1ms
+[Nest] 6508  - 13.10.2025, 19:19:19     LOG [WebSocketsController] TaskGateway subscribed to the "sendMessage" message +0ms      

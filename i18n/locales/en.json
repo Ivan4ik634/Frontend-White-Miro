@@ -1,0 +1,100 @@
+{
+  "title_boards": "Boards",
+  "description_boards": "Manage tasks, track progress, and work as a team.",
+  "add_board": "Add board",
+  "avtor": "Avtor",
+  "not_preview": "Not preview",
+  "members": "Members",
+
+  "filters": "Filters",
+  "filters_all": "All",
+  "filters_shared": "Shared",
+  "filters_liked": "Liked",
+
+  "search": "Search...",
+
+  "sort": "Sort",
+  "sort_name": "Name",
+  "sort_date": "Date",
+
+  "home": "Home",
+  "tasks": "Tasks",
+  "boards": "Boards",
+  "settings": "Settings",
+  "logout": "Logout",
+
+  "total_boards": "Total boards",
+  "total_tasks": "Total tasks",
+  "avg_members": "Average number of participants",
+  "done_boards": "Done boards",
+  "private_boards": "Private boards",
+  "team_boards": "Team boards",
+  "title_last_boards": "Last boards",
+  "description_last_boards": "Recent boards you've accessed",
+
+  "title": "Title",
+  "status": "Status",
+  "access": "Access",
+  "board": "Board",
+  "text": "Text",
+  "id": "Id",
+  "created_at": "Created At",
+
+  "title_last_tasks": "Last tasks",
+  "description_last_tasks": "Recent tasks you've worked on",
+
+  "title_edit_profile": "Edit profile",
+  "description_edit_profile": "Update your profile to stay recognizable",
+  "add_image": "Add image",
+  "delete_image": "Delete image",
+  "save": "Save",
+
+  "notifications": "Notifications",
+  "description_notification": "User notification category",
+  "notification_tasks": "Task notifications",
+  "notification_entering_board": "Board notifications",
+  "notification_messages": "Message notifications",
+
+  "themes": "Themes",
+  "theme_light": "Light",
+  "theme_dark": "Dark",
+
+  "global_settings": "Global settings",
+  "change_language": "Change language",
+  "leave_account": "Leave account",
+
+  "description_tasks": "Complete, edit, and solve new problems without any hassle.",
+
+  "remove_to_favorite": "Remove to favorite",
+  "add_to_favorite": "Add to favorite",
+
+  "delete_board": "Delete board",
+  "edit_board": "Edit board",
+  "add_task": "Add task",
+
+  "scale": "Scale",
+  "elements": "Elements",
+
+  "task": "task",
+  "copy_text": "Copy text",
+  "delete_task": "Delete task",
+  "edit_task": "Edit task",
+  "info_task": "Info task",
+
+  "share_board": "Share board",
+  "copy_link": "Copy link",
+  "who_has_access": "Everyone who has access",
+
+  "public_access": "Public access",
+  "locked_access": "Locked access",
+
+  "description_public_access": "All Internet users who have these links can view",
+  "description_locked_access": "Only users with access can follow this link",
+
+  "submit": "Submit",
+  "add": "Add",
+  "edit": "Edit",
+
+  "no_boards": "No boards",
+  "no_tasks": "No tasks"
+}

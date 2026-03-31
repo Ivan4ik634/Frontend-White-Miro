@@ -1,0 +1,16 @@
+{
+  "name": "White Miro",
+  "short_name": "White Miro",
+  "description": "Create board and tasks",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/White-Miro.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
