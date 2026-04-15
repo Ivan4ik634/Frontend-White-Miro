@@ -59,8 +59,10 @@ export const useBoard = ({ socket }: { socket: Socket }) => {
   const onEndConnect = async (id: string) => {
     if (id === connectingFrom) return setConnectingFrom(null);
     if (!connectingFrom || !userId) return;
+    if (nodes.tasks.find((t) => t._id === connectingFrom)?.edges.find((e) => e.to === id)) return;
 
     addEdge(connectingFrom, id);
+
     socket?.emit('task:update', {
       edge: { from: connectingFrom, to: id },
       userId,
