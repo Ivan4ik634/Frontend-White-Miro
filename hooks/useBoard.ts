@@ -57,12 +57,8 @@ export const useBoard = ({ socket }: { socket: Socket }) => {
   }, [board, position]);
 
   const onEndConnect = async (id: string) => {
-    console.log(nodes.tasks);
     if (id === connectingFrom) return setConnectingFrom(null);
     if (!connectingFrom || !userId) return;
-
-    //@ts-ignore
-    if (nodes.tasks.find((t) => t === connectingFrom)?.edges.find((e) => e.to === id)) return;
 
     addEdge(connectingFrom, id);
 
