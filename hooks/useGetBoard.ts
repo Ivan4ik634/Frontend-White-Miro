@@ -21,9 +21,8 @@ export const useGetBoard = () => {
   const [error, setError] = useState<'Access denied' | 'Board not found' | null>(null);
   useEffect(() => {
     if (!data) return;
-    if (data.board.message && data.board.message === 'Board not found') return;
-    if (data.board && data.board._id !== param.id) return;
     if ('message' in data) return setError(data.message);
+    if (data.board && data.board._id !== param.id) return;
     setTasks({ tasks: data.tasks, boardId: param.id });
     setBoard(data.board);
     setPositionUsers(data.board.members.map((user) => ({ user: user, x: 0, y: 0 })));
